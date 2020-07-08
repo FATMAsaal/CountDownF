@@ -1,0 +1,26 @@
+﻿@page "/CountDown"
+
+<h3>CountDown</h3>
+@using System.Timers;
+<p>Number: @number</p>
+
+<button class="btn btn-primary" @onclick="countDownFunction">Click me</button>
+
+@code {
+    public static int number = 2000;
+
+    void countDownFunction()
+
+    {
+        Timer tm = new Timer();
+        tm.Interval = 1000;
+        tm.Elapsed += (s, e) => number -= 10;
+        number -= 10;
+        tm.Start();
+    }
+
+    public static int get()
+    {
+        return number;
+    }
+}

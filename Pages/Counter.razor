@@ -1,0 +1,28 @@
+﻿@page "/counter"
+@using CountDownF.Pages;
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<p>Value recuperated: @Value</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-primary" @onclick="RecuperateValue">Recuperate value</button>
+
+
+@code {
+    private int currentCount = 0;
+    private int Value = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+    private void RecuperateValue()
+    {
+        Value = CountDown.get();
+    }
+    
+
+
+}
